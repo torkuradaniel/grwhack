@@ -1,0 +1,8 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Daily at 08:00 UTC (09:00 WAT). Adjust to taste.
+cronSchedule = "0 8 * * *"
+restartPolicyType = "NEVER"
