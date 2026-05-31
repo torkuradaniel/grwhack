@@ -234,7 +234,7 @@ export async function runWeb(): Promise<void> {
   }
 }
 
-async function main(): Promise<void> {
+export async function runAll(): Promise<void> {
   await ensureSchema();
   console.log("[bootstrap] schema ensured");
 
@@ -249,8 +249,3 @@ async function main(): Promise<void> {
   });
   process.exit(exitCode);
 }
-
-main().catch((error) => {
-  console.error("[main] fatal startup error:", error);
-  process.exit(1);
-});

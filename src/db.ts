@@ -1,10 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
+import type { WebSocketLikeConstructor } from "@supabase/realtime-js";
+import WebSocket from "ws";
 import { env } from "./config.js";
 import type { ClassifiedPost, ClassifiedWebResult, Platform, SocialPost, WebResult } from "./types.js";
 import type { Brand } from "./config.js";
 
 const supabase = createClient(env.supabaseUrl, env.supabaseServiceKey, {
   auth: { persistSession: false },
+  realtime: { transport: WebSocket as unknown as WebSocketLikeConstructor },
 });
 
 async function filterUnseen<T extends { url: string }>(
