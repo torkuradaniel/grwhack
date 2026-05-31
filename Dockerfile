@@ -9,4 +9,4 @@ COPY tsconfig.json ./
 COPY src ./src
 COPY supabase ./supabase
 
-CMD ["npx", "tsx", "src/index.ts"]
+CMD ["npx", "tsx", "src/entrypoint.ts"]

@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "tsx src/index.ts",
-    "social": "tsx -e \"import('./src/index.ts').then(m => m.runSocial())\"",
-    "web": "tsx -e \"import('./src/index.ts').then(m => m.runWeb())\"",
+    "start": "tsx src/entrypoint.ts",
+    "social": "tsx src/entrypoint.ts social",
+    "web": "tsx src/entrypoint.ts web",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -16,7 +16,8 @@
     "openai": "^4.70.0",
     "parallel-web": "^0.4.1",
     "pg": "^8.13.0",
-    "resend": "^4.0.0"
+    "resend": "^4.0.0",
+    "ws": "^8.20.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
