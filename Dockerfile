@@ -2,8 +2,8 @@ FROM node:20-slim
 
 WORKDIR /app
 
-COPY package.json ./
-RUN npm install --omit=dev && npm install --no-save tsx typescript
+COPY package.json package-lock.json ./
+RUN npm ci --include=dev
 
 COPY tsconfig.json ./
 COPY src ./src
